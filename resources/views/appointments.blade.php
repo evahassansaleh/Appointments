@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        img {
-            border: 5px solid #555;
-        }
-
-        .button {
-            padding: 15px 25px;
-            font-size: 24px;
-            text-align: center;
-            cursor: pointer;
-            outline: none;
-            color: #fff;
-            background-color:  #2196F3;;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-        }
-
-        .button:hover {background-color:  #2196F3}
-
-        .button:active {
-            background-color: #3e8e41;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }
-
-    </style>
-</head>
 <body>
 
-<img src="https://i.stack.imgur.com/34AD2.jpg"  style="width:25%;">
+<h2>  Appointments </h2>
 
-<button class="button" >Book Now</button>
+<p><strong>  Select</strong> Appointment Date: .</p>
 
+<form action="/action_page.php">
+    <label for="calender"> <Strong>Calendar</Strong> </label>
+    <input type="date" id="calender" name="calender">
+    <input type="submit" value="Submit">
+</form>
+
+
+
+<div class="container">
+
+
+</div>
+
+
+<div class="container">
+
+    <h1>Laravel Bootstrap Timepicker</h1>
+
+    <div style="position: relative">
+
+        <strong>Timepicker:</strong>
+
+        <input class="timepicker form-control" type="text">
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $('.timepicker').datetimepicker({
+
+        format: 'HH:mm:ss'
+
+    });
+
+</script>
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

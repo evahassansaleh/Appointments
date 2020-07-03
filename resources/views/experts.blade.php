@@ -12,7 +12,6 @@
 
 <div class="container">
     <h2>Experts</h2>
-
     <div class="media">
         <div class="media">
             <img src="https://i.stack.imgur.com/34AD2.jpg"  class="media-object" style="width:70px">
@@ -20,7 +19,7 @@
         <div class="media-body">
             <h4 class="media-heading">Li Wei <small><i>Chinese teacher </i> </small></h4>
 
-            <form action="http://127.0.0.1:8000/appoinments">
+            <form action="http://127.0.0.1:8000/appointments">
                 <button type="submit">More Info</button>
             </form>
 
@@ -32,7 +31,7 @@
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">Quasi Shawa <small><i>Civil Engineer</i></small></h4>
-                    <form action="http://127.0.0.1:8000/appoinments">
+                    <form action="http://127.0.0.1:8000/appointments">
                         <button type="submit">More Info</button>
                     </form>
 
@@ -43,7 +42,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">Shimaa Badawy <small><i>Computer Engineer</i></small></h4>
-                            <form action="http://127.0.0.1:8000/appoinments">
+                            <form action="http://127.0.0.1:8000/appointments">
                                 <button type="submit">More Info</button>
                             </form>
                         </div>
