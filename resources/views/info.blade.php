@@ -1,137 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        img {
-            border: 5px solid #555;
-        }
-
-        .button {
-            padding: 15px 25px;
-            font-size: 24px;
-            text-align: center;
-            cursor: pointer;
-            outline: none;
-            color: #fff;
-            background-color:  #2196F3;;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-        }
-
-        .button:hover {background-color:  #2196F3}
-
-        .button:active {
-            background-color: #3e8e41;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<img src="https://i.stack.imgur.com/34AD2.jpg"  style="width:25%;">
+<?php
+$experts= array(array("William Jordan", "Doctor", "Anabar","New Zealand Standard Time (GMT +12)","6 AM -> 5 PM"),
+    array("Qusai shawa","Civil Engineer","Syria","Eastern European Summer Time(GMT +4)","6 AM -> 12PM"),
+    array("Shimaa Badawy", "Computer Engineer", "Egypt","Eastern European Summer Time(GMT+2)","1PM -> 2 PM"));
+$ExpertOne = $experts[(int)request()->route()->id];
 
-<button class="button" >Book Now</button>
+?>
+<div class="container">
+    <img src="https://i.stack.imgur.com/34AD2.jpg"  style="width:25%;">
+    <div>
+        {{$ExpertOne[0]}}
+    </div>
+    <div>
+        {{$ExpertOne[1]}}
+    </div>
+    <div style="border-style: solid;">
+        <div>
+            Country: {{$ExpertOne[2]}}
+        </div>
+        <div>
+            Working hours:  {{$ExpertOne[4]}}
+        </div>
+    </div>
+    <form>
+        <input class = "button" type="button" value="Book now" onclick="window.location.href='http://127.0.0.1:8000/appointments/{{request()->route()->id}}'" />
+    </form>
+</div>
+
 
 </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-
-                </div>
-
-
-            </div>
-        </div>
-    </body>
 </html>

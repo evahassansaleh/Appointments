@@ -17,10 +17,10 @@
             <img src="https://i.stack.imgur.com/34AD2.jpg"  class="media-object" style="width:70px">
         </div>
         <div class="media-body">
-            <h4 class="media-heading">Li Wei <small><i>Chinese teacher </i> </small></h4>
+            <h4 class="media-heading">William Jordan <small><i>Doctor </i> </small></h4>
 
-            <form action="http://127.0.0.1:8000/appointments">
-                <button type="submit">More Info</button>
+            <form action="http://127.0.0.1:8000/info/0">
+                <button type="submit" value="button1">More Info</button>
             </form>
 
 
@@ -31,8 +31,8 @@
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">Quasi Shawa <small><i>Civil Engineer</i></small></h4>
-                    <form action="http://127.0.0.1:8000/appointments">
-                        <button type="submit">More Info</button>
+                    <form action="http://127.0.0.1:8000/info/1">
+                        <button type="submit" value="button2">More Info</button>
                     </form>
 
                     <!-- Nested media object -->
@@ -42,8 +42,8 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">Shimaa Badawy <small><i>Computer Engineer</i></small></h4>
-                            <form action="http://127.0.0.1:8000/appointments">
-                                <button type="submit">More Info</button>
+                            <form action="http://127.0.0.1:8000/info/2">
+                                <button type="submit" value="button3">More Info</button>
                             </form>
                         </div>
                     </div>
@@ -54,96 +54,3 @@
         </div>
     </div>
 </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-                <div class="content">
-                    <div class="title m-b-md">
-
-                    </div>
-
-
-            </div>
-        </div>
-    </body>
-</html>
