@@ -11,6 +11,10 @@
                 <input type="date" id="calender"  class="form-control" v-model="date" name="calender">
             </div>
 
+            <div> 
+               Current Time is: {{dateFormat(new Date())}}
+	    </div>
+
             <div class="form-group">
                 <label for="sel1"><Strong>Duration</Strong></label>
                 <select class="form-control" v-model="duration" @change="onChange($event)" id="sel1">
@@ -103,7 +107,7 @@
             },
             dateFormat(dateString) {
                 const date = new Date(dateString);
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZoneName: 'short'};
                 return date.toLocaleDateString("en-US", options);
             },
             formatTime(newTime) {

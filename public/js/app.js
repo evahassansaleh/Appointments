@@ -1946,6 +1946,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     ip: String,
@@ -2015,7 +2019,8 @@ __webpack_require__.r(__webpack_exports__);
         weekday: 'long',
         year: 'numeric',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
+        timeZoneName: 'short'
       };
       return date.toLocaleDateString("en-US", options);
     },
@@ -38254,6 +38259,14 @@ var render = function() {
               }
             }
           })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _vm._v(
+            " \n               Current Time is: " +
+              _vm._s(_vm.dateFormat(new Date())) +
+              "\n\t    "
+          )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
