@@ -9,32 +9,13 @@
 </head>
 <body>
 
-<?php
-$experts= array(array("William Jordan", "Doctor", "Anabar","New Zealand Standard Time (GMT +12)","6 AM -> 5 PM"),
-    array("Qusai shawa","Civil Engineer","Syria","Eastern European Summer Time(GMT +4)","6 AM -> 12PM"),
-    array("Shimaa Badawy", "Computer Engineer", "Egypt","Eastern European Summer Time(GMT+2)","1PM -> 2 PM"));
-$ExpertOne = $experts[(int)request()->route()->id];
-?>
-<div class="container">
-    <img src="https://i.stack.imgur.com/34AD2.jpg"  style="width:25%;">
-    <div>
-        {{$ExpertOne[0]}}
+
+<div>
+    <div class="container" id="app">
+        <expert-info :id="{{request()->route()->id}}" ></expert-info>
     </div>
-    <div>
-        {{$ExpertOne[1]}}
-    </div>
-    <div style="border-style: solid;">
-        <div>
-            Country: {{$ExpertOne[2]}}
-        </div>
-        <div>
-            Working hours:  {{$ExpertOne[4]}}
-        </div>
-    </div>
-    <form>
-        <input class = "button" type="button" value="Book now" onclick="window.location.href='http://appointments.algoroot.com/appointments/{{request()->route()->id}}'" />
-    </form>
 </div>
+<script src="../js/app.js"></script>
 
 
 </body>

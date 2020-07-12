@@ -1,49 +1,31 @@
 <template>
     <div class="container">
-
-        <form>
-            <center><h2>  Appointments </h2> </center>
-
-            <p><strong>  Select</strong> Appointment Date: .</p>
-
-            <div class="form-group">
-                <label for="calender"> <Strong>Calendar</Strong> </label>
-                <input type="date" id="calender"  class="form-control" v-model="date" name="calender">
-            </div>
-
-            <div> 
-               Current Time is: {{dateFormat(new Date())}}
-	    </div>
-
-            <div class="form-group">
-                <label for="sel1"><Strong>Duration</Strong></label>
-                <select class="form-control" v-model="duration" @change="onChange($event)" id="sel1">
-                    <option v-for="x in [15, 30, 45, 60]" v-bind:key="x" :value="x">{{x}} mins</option>
-                </select>
-                <br>
-
-            </div>
-            <div class="form-group">
-                <label for="sel1"><Strong> Time slot </Strong></label>
-                <select class="form-control" id="sel11" v-model="slot" >
-                    <option v-for="x in slots" v-bind:key="x" :value="x">{{formatTime(x)}} - {{formatTime(x + duration)}} </option>
-                </select>
-                <br>
-            </div>
-        </form>
-        <div v-if="date != ''">
-            <p class="text"><strong>Your appointment will be on</strong> </p>
-            <p class="text"> <strong> {{dateFormat(date)}} </strong> </p>
-            <p class="text"> <strong> from {{formatTime(slot)}} to {{formatTime(slot + duration)}} </strong> </p>
+      <div class="container">
+        <img src="https://i.stack.imgur.com/34AD2.jpg"  style="width:25%;">
+        <div>
+          {{experts[id].name}}
         </div>
-
+        <div>
+         {{experts[id].job}}
+       </div>
+       <div style="border-style: solid; padding: 5px;">
+         <div style="padding: 3px;">
+            Country: {{experts[id].country}}
+         </div>
+         <div style="padding: 3px;">
+             Working hours:  {{formatTime(experts[id].start) }} - {{formatTime(experts[id].end) }}
+         </div>
+       <div style="padding: 3px;" > Working hours on your local time: {{formatTime(toLocal(experts[id].start)) }} - {{formatTime(toLocal(experts[id].end)) }} </div>
+       </div>
+        <div style="padding: 3px;"><center><a class="btn btn-primary" type="button" :href="'http://appointments.algoroot.com/appointments/'+id"> Book now</a> </center></div>
+      </div>
     </div>
 </template>
 
 <script>
     export default {
+        name: 'expert-info',
         props: {
-            ip: String,
             id: Number,
         },
         data() {
@@ -59,16 +41,22 @@
               experts: [
                   {
                       name: 'William Jordan',
+                      job: 'Doctor',
+                      country: 'Anabar',
                       start: 6*60,
                       end: 17*60,
                       timeZoneOffSet: 12*60,
                   },
-                  {  name: 'Quasi Shawa',
+                  {   name: 'Quasi Shawa',
+                      job: 'Civil Engineer',
+                      country: 'Syria',
                       start: 6*60,
                       end: 12*60,
                       timeZoneOffSet: 3*60,
                   },
-                  {  name: 'Shimaa Badawy',
+                  {   name: 'Shimaa Badawy',
+                      job: 'Computer Engineer',
+                      country: 'Egypt',
                       start: 13*60,
                       end: 14*60,
                       timeZoneOffSet: 2*60,
@@ -88,6 +76,13 @@
                 let date = new Date();
                 date.setHours(5);
                 return date;
+            },
+            toLocal(t){
+                const now = new Date();
+                let userOffset =  now.getTimezoneOffset();
+                let offset =  this.exoffset + userOffset;
+                let newTime = (t + offset + 24 * 60 ) % (24 * 60);
+                return newTime;
             },
             getSlots() {
                 let slots = [];
@@ -129,4 +124,12 @@
     .text{
         color: blue;
     }
+
+.btn{
+ pading: 3px;
+}
+
+.container{
+  padding: 5px;
+}
 </style>
